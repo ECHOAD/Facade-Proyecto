@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 using Facade.Modelos;
 
 
-namespace Facade.Modulosf
+namespace Facade.Modulos
 {
-    public class Modulo_RRHH
+    public class Modulo_Nomina
     {
 
         

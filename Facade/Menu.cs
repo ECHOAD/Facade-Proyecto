@@ -6,18 +6,19 @@ using System.Threading.Tasks;
 using Facade.Modelos;
 using Facade.Helpers;
 using Facade.Modulos;
-using Facade.Modulosf;
+
 
 namespace Facade
 {
     public static class Menu
     {
-        private static List<Empleados> lst_Empleados  = new List<Empleados>();
+        private static List<Empleados> lst_Empleados = new List<Empleados>();
 
-        private static Modulo_RRHH ModuloRHH  = new Modulo_RRHH();
+        private static Modulo_RRHH ModuloRRHH = new Modulo_RRHH();
 
         private static Modulo_Nomina ModuloNomina = new Modulo_Nomina();
 
+        
 
 
         public static void IncializarMenu()
@@ -41,17 +42,25 @@ namespace Facade
 
                     Console.WriteLine("¿Que funcion quiere realizar?");
 
-                    Console.WriteLine("1-Contratar  2-Desvincular ");
+                    Console.WriteLine("1-Contratar  2-Desvincular 3-Salir");
 
-                    do
+                    seleccion = Inputs.Input_int("Seleccion: ");
+
+                    if (seleccion <= 0 || seleccion > 3)
                     {
-                        seleccion = Inputs.Input_int("Seleccion: ");
-
-
-                    } while (seleccion <= 0 || seleccion > 3);
+                        Console.WriteLine("Seleccion no existe");
+                        Console.ReadKey();
+                        Console.Clear();
+                        goto case 1;
+                    }
+                    else if(seleccion == 3)
+                    {
+                        IncializarMenu();
+                    }
 
                     if (seleccion == 1)
                     {
+                        ModuloRRHH.ControlEmpleados.Contratar(lst_Empleados);
                     }
                     else if (seleccion == 2)
                     {
@@ -78,7 +87,7 @@ namespace Facade
 
         }
 
-       
+
     }
 }
 
