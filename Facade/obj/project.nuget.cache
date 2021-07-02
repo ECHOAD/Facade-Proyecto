@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "jTJVSJlErcZqolyPosxq6mS57P85dM/DcDdK5Y5BgaDzvEeb1Qf26JcfVV6qNGopXS2X4keQCR5oFsWZnkcPAA==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Adrian Estevez\\source\\repos\\Facade\\Facade\\Facade.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Adrian Estevez\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\5.0.5\\microsoft.netcore.app.host.win-x64.5.0.5.nupkg.sha512"
+  ],
+  "logs": []
+}
