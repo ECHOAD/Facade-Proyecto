@@ -14,14 +14,19 @@ namespace Facade.Helpers
         {
             for (int i = 0; i < 5; i++)
             {
-                Console.WriteLine("******************************************");
-                Console.WriteLine("Cedula: " + ListaEmpleados[i].Cedula);
-                Console.WriteLine("Nombre: " + ListaEmpleados[i].Nombres);
-                Console.WriteLine("Cargo: " + ListaEmpleados[i].Cargo);
-                Console.WriteLine("Departamento: " + ListaEmpleados[i].Departamento);
-                Console.WriteLine("Salario Bruto: " + ListaEmpleados[i].SalarioBruto);
-                Console.WriteLine("******************************************");
-
+                try
+                {
+                    Console.WriteLine("******************************************");
+                    Console.WriteLine("Cedula: " + ListaEmpleados[i].Cedula);
+                    Console.WriteLine("Nombre: " + ListaEmpleados[i].Nombres);
+                    Console.WriteLine("Cargo: " + ListaEmpleados[i].Cargo);
+                    Console.WriteLine("Departamento: " + ListaEmpleados[i].Departamento);
+                    Console.WriteLine("Salario Bruto: " + ListaEmpleados[i].SalarioBruto);
+                    Console.WriteLine("******************************************");
+                }catch(Exception)
+                {
+                    break;
+                }
             }
 
         }

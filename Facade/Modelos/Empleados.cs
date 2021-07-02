@@ -12,13 +12,20 @@ namespace Facade.Modelos
         public override string Nombres { get; set; }
         public string Departamento { get; set; }
         public string Cargo { get; set; }
-        public double SalarioNeto { get; set; }
-        public double Incentivo_o_Descuento { get; set; }
         public double SalarioBruto { get; set; }
+        public double Incentivo { get; set; }
+        public double Descuento { get; set; }
+        public double Descuento_AFP { get; set; }
+        public double Descuento_ASR { get; set; }
+        public double SalarioNeto { get; set; }
 
         public Empleados()
         {
-            Incentivo_o_Descuento = 0;
+            Incentivo = 0;
+            Descuento = 0;
+            Descuento_ASR = 0;
+            Descuento_AFP = 0;
+            SalarioNeto = 0;
         }
 
     }

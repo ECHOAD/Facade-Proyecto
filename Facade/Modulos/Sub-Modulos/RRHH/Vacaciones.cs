@@ -10,7 +10,7 @@ namespace Facade.Modulos.Sub_Modulos.RRHH
     public class Vacaciones
     {
 
-        public static List <Empleados_Vacaciones> listaEmpleados_Vacaciones= new List<Empleados_Vacaciones>();
+        private static List <Empleados_Vacaciones> listaEmpleados_Vacaciones= new List<Empleados_Vacaciones>();
        
         public void SetVacaiones(List<Empleados> ListaEmpleados)
         {
@@ -28,6 +28,7 @@ namespace Facade.Modulos.Sub_Modulos.RRHH
 
                 empleado = ListaEmpleados.Find(x => x.Cedula == identificador);
 
+                Console.WriteLine("**********EMPlEADO SELECCIONADO***********");
                 Console.WriteLine("******************************************");
                 Console.WriteLine("Cedula: " + empleado.Cedula);
                 Console.WriteLine("Nombre: " + empleado.Nombres);
@@ -43,7 +44,12 @@ namespace Facade.Modulos.Sub_Modulos.RRHH
 
                 DateTime fechainicio = DateTime.Parse(Inputs.Input_String("Ingrese la fecha inicio: "));
                 DateTime fechafin = DateTime.Parse(Inputs.Input_String("Ingrese la fecha fin: "));
-                listaEmpleados_Vacaciones.Add(new Empleados_Vacaciones {Cedula=empleado.Cedula,FechaInicio=fechainicio, FechaFin=fechafin});
+
+                TimeSpan tSpan=fechainicio - fechafin;
+
+
+
+                listaEmpleados_Vacaciones.Add(new Empleados_Vacaciones {Cedula=empleado.Cedula,FechaInicio=fechainicio, FechaFin=fechafin,CantidadDias= tSpan.Days });
                 Console.WriteLine("Exito");
 
                 Console.ReadKey();
@@ -76,8 +82,14 @@ namespace Facade.Modulos.Sub_Modulos.RRHH
 
 
             }
+        }
 
 
+
+        public List<Empleados_Vacaciones> GetEmpleados_Vacaciones()
+        {
+
+            return listaEmpleados_Vacaciones;
         }
     }
 }

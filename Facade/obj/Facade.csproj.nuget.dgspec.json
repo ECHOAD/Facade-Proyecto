@@ -39,6 +39,16 @@
       "frameworks": {
         "net5.0": {
           "targetAlias": "net5.0",
+          "dependencies": {
+            "EPPlus": {
+              "target": "Package",
+              "version": "[5.7.0, )"
+            },
+            "SpreadsheetLight": {
+              "target": "Package",
+              "version": "[3.5.0, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",

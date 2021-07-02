@@ -6,13 +6,15 @@ using System.Threading.Tasks;
 
 namespace Facade.Modelos
 {
-    class Empleados_Vacaciones
+    public class Empleados_Vacaciones
     {
         public string Cedula { get; set; }
 
         public DateTime FechaInicio { get; set; }
 
         public DateTime FechaFin { get; set;}
+
+        public double CantidadDias { get; set; }
 
     }
 }
