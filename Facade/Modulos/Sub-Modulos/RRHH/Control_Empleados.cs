@@ -45,10 +45,12 @@ namespace Facade.Modulos.Sub_Modulos.RRHH
 
                 identificador = Inputs.Input_String("Ingrese el identificador del empleado (Cedula): ");
 
+                empleado = ListaEmpleados.Find(x => x.Cedula == identificador);
+
+
                 try
                 {
 
-                    empleado = ListaEmpleados.Find(x => x.Cedula == identificador);
 
                     Console.WriteLine("**********EMPlEADO SELECCIONADO***********");
                     Console.WriteLine("******************************************");

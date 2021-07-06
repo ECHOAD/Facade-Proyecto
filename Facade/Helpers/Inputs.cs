@@ -11,10 +11,25 @@ namespace Facade.Helpers
 
         public static string Input_String(string details)
         {
-            Console.Write($"\n{details}");
+            string read="";
+            try
+            {
+                Console.Write($"\n{details}");
 
-            string read= Console.ReadLine();
-            Console.Clear();
+                read = Console.ReadLine();
+                Console.Clear();
+
+            }
+            catch (Exception)
+            {
+
+                Console.WriteLine("Verifique lo que digitio , trate de nuevo...Presione cualquier tecla para avanzar");
+                Console.ReadKey();
+                Console.Clear();
+                Input_String(details);
+            }
+          
+
 
 
             return read;
@@ -25,24 +40,50 @@ namespace Facade.Helpers
 
         public static double Input_double(string details)
         {
-            Console.Write($"\n{details}");
+            string read = "";
+            try
+            {
+                Console.Write($"\n{details}");
 
-            string read = Console.ReadLine();
-            Console.Clear();
+                read = Console.ReadLine();
+                Console.Clear();
+                return double.Parse(read);
 
+            }
+            catch (Exception)
+            {
 
-            return double.Parse(read);
+                Console.WriteLine("Verifique lo que digitio , trate de nuevo...Presione cualquier tecla para avanzar");
+                Console.ReadKey();
+                Console.Clear();
+                Input_double(details);
+            }
+
+            return 0;
         }
 
         public static int Input_int(string details)
         {
-            Console.Write($"\n{details}");
+            string read = "";
+            try
+            {
+                Console.Write($"\n{details}");
 
-            string read = Console.ReadLine();
+                read = Console.ReadLine();
+                Console.Clear();
+                return int.Parse(read);
+            }
+            catch (Exception)
+            {
 
-            Console.Clear();
-        
-            return int.Parse(read);
+                Console.WriteLine("Verifique lo que digitio , trate de nuevo...Presione cualquier tecla para avanzar");
+                Console.ReadKey();
+                Console.Clear();
+                Input_int(details);
+            }
+        ;
+
+            return 0;
         }
 
 
